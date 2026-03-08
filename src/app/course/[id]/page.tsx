@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft, BookOpen, Clock, Layers, Star, User, Calendar } from 'lucide-react';
-import { courses } from '../../data/courses';
+import { courses } from '@/data/courses';
 
 export default function CourseDetailPage() {
   const params = useParams();
@@ -83,7 +83,7 @@ export default function CourseDetailPage() {
                     <span className="text-sm text-gray-600">建议学习学期</span>
                   </div>
                   <p className="text-lg font-semibold text-gray-900">
-                    {course.recommendedSemester === 'fall' ? '秋季学期' : course.recommendedSemester === 'spring' ? '春季学期' : '任意学期'}
+                    {course.recommendedSemester === 1 ? '第一学期' : course.recommendedSemester === 2 ? '第二学期' : course.recommendedSemester === 3 ? '第三学期' : course.recommendedSemester === 4 ? '第四学期' : course.recommendedSemester === 5 ? '第五学期' : course.recommendedSemester === 6 ? '第六学期' : course.recommendedSemester === 7 ? '第七学期' : course.recommendedSemester === 8 ? '第八学期' : '任意学期'}
                   </p>
                 </div>
 

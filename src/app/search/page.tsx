@@ -4,8 +4,8 @@ import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Search, BookOpen, Filter, X } from 'lucide-react';
-import { courses } from '../../data/courses';
-import { subjectTree } from '../../data/subjects';
+import { courses } from '@/data/courses';
+import { subjectTree } from '@/data/subjects';
 
 export default function SearchPage() {
   const [searchTerm, setSearchTerm] = useState('');

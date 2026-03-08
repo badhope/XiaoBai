@@ -4,8 +4,8 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft, BookOpen, Layers } from 'lucide-react';
-import { subjectTree } from '../../data/subjects';
-import { courses } from '../../data/courses';
+import { subjectTree } from '@/data/subjects';
+import { courses } from '@/data/courses';
 
 export default function SubjectDetailPage() {
   const params = useParams();

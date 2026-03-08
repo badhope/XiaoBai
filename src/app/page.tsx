@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { BookOpen, Layers, Share2, TrendingUp, Star, Clock, Award, GraduationCap } from 'lucide-react';
-import { courses } from '../data/courses';
+import { courses } from '@/data/courses';
 
 export default function Home() {
   const hotCourses = courses.slice(0, 6);
