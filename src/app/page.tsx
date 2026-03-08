@@ -21,13 +21,13 @@ export default function Home() {
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             涵盖 14 个学科门类、92 个专业类、150+ 门核心课程的现代化学习平台
           </p>
-          <div className="flex gap-4 justify-center">
-            <Link href="/subjects" className="btn-primary">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/subjects" className="btn-primary inline-block text-center">
               开始探索
             </Link>
             <Link
               href="/search"
-              className="px-6 py-3 border-2 border-primary-600 text-primary-600 font-semibold rounded-lg hover:bg-primary-50 transition-colors duration-200"
+              className="px-6 py-3 border-2 border-primary-600 text-primary-600 font-semibold rounded-lg hover:bg-primary-50 transition-colors duration-200 inline-block text-center"
             >
               搜索课程
             </Link>
@@ -37,7 +37,7 @@ export default function Home() {
 
       {/* Stats Section */}
       <section className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
             { icon: Layers, label: '学科门类', value: '14' },
             { icon: BookOpen, label: '专业类', value: '92' },
@@ -49,18 +49,18 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="card text-center"
+              className="card text-center p-4"
             >
-              <stat.icon className="w-12 h-12 mx-auto mb-4 text-primary-600" />
-              <div className="text-3xl font-bold mb-2">{stat.value}</div>
-              <div className="text-gray-600">{stat.label}</div>
+              <stat.icon className="w-10 h-10 mx-auto mb-3 text-primary-600" />
+              <div className="text-2xl font-bold mb-1">{stat.value}</div>
+              <div className="text-gray-600 text-sm">{stat.label}</div>
             </motion.div>
           ))}
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="container mx-auto px-4 py-16">
+      <section className="container mx-auto px-4 py-16 bg-white">
         <h2 className="text-3xl font-bold text-center mb-12">核心特色</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {[
@@ -85,7 +85,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="card"
+              className="card p-6"
             >
               <feature.icon className="w-12 h-12 text-primary-600 mb-4" />
               <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
@@ -110,11 +110,11 @@ export default function Home() {
             <Link
               key={category.code}
               href={`/subjects`}
-              className="card hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              className="card hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 p-6"
             >
               <div className="flex items-center justify-between mb-3">
                 <span className="text-2xl font-bold">{category.name}</span>
-                <span className="px-3 py-1 bg-primary-100 text-primary-700 text-sm rounded-full">
+                <span className="px-3 py-1 bg-primary-100 text-primary-700 text-xs rounded-full">
                   {category.count}个专业类
                 </span>
               </div>
@@ -125,6 +125,16 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12">
+        <div className="container mx-auto px-4 text-center">
+          <p className="mb-4">学科分类与课程共享系统 v2.0</p>
+          <p className="text-gray-400 text-sm">
+            基于 Next.js 14 + TypeScript + Tailwind CSS 构建
+          </p>
+        </div>
+      </footer>
     </main>
   );
 }
